@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-contact';
+  isLoggedIn = false;
+
+  toggleAuth() {
+    this.isLoggedIn = !this.isLoggedIn;
+  }
 }

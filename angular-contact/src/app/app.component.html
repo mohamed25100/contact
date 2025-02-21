@@ -1,2 +1,20 @@
-<p>app.component.html works</p>
+<mat-toolbar color="primary">
+  <span>MyApp</span>
+
+  <span class="spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item><mat-icon>home</mat-icon> Home</button>
+    <button mat-menu-item><mat-icon>contact_mail</mat-icon> Contact</button>
+  </mat-menu>
+
+  <button mat-button (click)="toggleAuth()">
+    <mat-icon>{{ isLoggedIn ? 'logout' : 'login' }}</mat-icon>
+    {{ isLoggedIn ? 'Logout' : 'Login' }}
+  </button>
+</mat-toolbar>
 <router-outlet></router-outlet>
