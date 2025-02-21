@@ -8,8 +8,8 @@
   </button>
   
   <mat-menu #menu="matMenu">
-    <button mat-menu-item><mat-icon>home</mat-icon> Home</button>
-    <button mat-menu-item><mat-icon>contact_mail</mat-icon> Contact</button>
+    <button mat-menu-item (click)="Home()"><mat-icon>home</mat-icon> Home</button>
+    <button mat-menu-item (click)="Contacts()"><mat-icon>contact_mail</mat-icon> Contacts</button>
   </mat-menu>
 
   <button mat-button (click)="toggleAuth()">
