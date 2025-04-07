@@ -1,1 +1,41 @@
-<p>contacts works!</p>
+<div class="contact-list">
+    <div class="search-bar">
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher par prénom ou nom" />
+    </div>
+
+    <h2>Liste des Contacts</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Entreprise</th>
+                <th>Poste</th>
+                <th>Date de naissance</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of filteredContacts()">
+                <td [ngClass]="{'empty': !contact.firstName}">{{ contact.firstName || 'Non renseigné' }}</td>
+                <td [ngClass]="{'empty': !contact.lastName}">{{ contact.lastName || 'Non renseigné' }}</td>
+                <td [ngClass]="{'empty': !contact.email}">{{ contact.email || 'Non renseigné' }}</td>
+                <td [ngClass]="{'empty': !contact.phone}">{{ contact.phone || 'Non renseigné' }}</td>
+                <td [ngClass]="{'empty': !contact.address}">{{ contact.address || 'Non renseigné' }}</td>
+                <td [ngClass]="{'empty': !contact.company}">{{ contact.company || 'Non renseigné' }}</td>
+                <td [ngClass]="{'empty': !contact.jobTitle}">{{ contact.jobTitle || 'Non renseigné' }}</td>
+                <td [ngClass]="{'empty': !contact.birthday}">{{ contact.birthday || 'Non renseigné' }}</td>
+                <td>
+                    <button (click)="editContact(contact.id)">📝 Modifier</button>
+                </td>
+                <td>
+                    <button (click)="deleteContact(contact.id)">❌ Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

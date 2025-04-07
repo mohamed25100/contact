@@ -16,8 +16,8 @@ export class AppComponent {
   toggleAuth() {
     this.isLoggedIn = !this.isLoggedIn;
   }
-  Contacts() {
-    this.router.navigateByUrl('contacts');
+  AddContact() {
+    this.router.navigateByUrl('contact/add');
   }
   Home() {
     this.router.navigateByUrl('');

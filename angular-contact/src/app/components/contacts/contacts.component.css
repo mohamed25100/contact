@@ -1,0 +1,133 @@
+/* ... Vos styles CSS existants pour .contact-list ... */
+
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    /* Aligne verticalement les éléments dans la barre de recherche */
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    /* Permet à l'input de prendre l'espace disponible */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    /* Supprime la bordure de focus par défaut */
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #007bff;
+    /* Couleur de bordure au focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    /* Ombre légère au focus */
+}
+
+/* Optionnel: Ajouter une icône de recherche */
+.search-bar {
+    position: relative;
+    /* Pour positionner l'icône absolument */
+}
+
+.search-bar i {
+    /* Assurez-vous d'avoir une librairie d'icônes comme Font Awesome */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.search-bar input[type="text"] {
+    padding-right: 35px;
+    /* Espace pour l'icône */
+}
+
+.contact-list {
+    width: 90%;
+    margin: 20px auto;
+    font-family: sans-serif;
+}
+
+.contact-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-list table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.contact-list th,
+.contact-list td {
+    border: 1px solid #eee;
+    padding: 10px 15px;
+    text-align: left;
+    color: #555;
+}
+
+.contact-list th {
+    background-color: #f8f8f8;
+    font-weight: 600;
+}
+
+.contact-list tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.contact-list tr:hover {
+    background-color: #f0f0f0;
+}
+
+.empty {
+    background-color: #f0f0f0;
+    color: #888;
+    font-style: italic;
+}
+
+/* Style des boutons Modifier et Supprimer (sans rouge) */
+.contact-list button {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: transparent;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-list button:hover {
+    background-color: #f0f0f0;
+}
+
+.contact-list button:first-of-type {
+    /* Style pour le bouton Modifier */
+    border-color: #a8c9e7;
+    color: #3498db;
+}
+
+.contact-list button:last-of-type {
+    /* Style pour le bouton Supprimer */
+    border-color: #d3d3d3;
+    /* Bordure grise foncée */
+    color: #777;
+    /* Couleur de texte grise foncée */
+}
+
+.contact-list button:first-of-type:hover {
+    background-color: #e6f0f8;
+}
+
+.contact-list button:last-of-type:hover {
+    background-color: #e0e0e0;
+    /* Fond gris clair au survol */
+}

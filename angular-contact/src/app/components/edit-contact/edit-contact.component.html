@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Modifier un Contact</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="updateContact()">
+
+        <label>Prénom:</label>
+        <input type="text" formControlName="firstName" required />
+        <div class="error" *ngIf="contactForm.controls['firstName'].invalid && contactForm.controls['firstName'].touched">
+            {{ getErrorMessage(contactForm.controls['firstName'], 'Prénom') }}
+        </div>
+
+        <label>Nom:</label>
+        <input type="text" formControlName="lastName" />
+        <div class="error" *ngIf="contactForm.controls['lastName'].invalid && contactForm.controls['lastName'].touched">
+            {{ getErrorMessage(contactForm.controls['lastName'], 'Nom') }}
+        </div>
+
+        <label>Email:</label>
+        <input type="email" formControlName="email" />
+        <div class="error" *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched">
+            {{ getErrorMessage(contactForm.controls['email'], 'Email') }}
+        </div>
+
+        <label>Téléphone:</label>
+        <input type="text" formControlName="phone" required />
+        <div class="error" *ngIf="contactForm.controls['phone'].invalid && contactForm.controls['phone'].touched">
+            {{ getErrorMessage(contactForm.controls['phone'], 'Téléphone') }}
+        </div>
+
+        <label>Adresse:</label>
+        <input type="text" formControlName="address" />
+
+        <label>Entreprise:</label>
+        <input type="text" formControlName="company" />
+
+        <label>Poste:</label>
+        <input type="text" formControlName="jobTitle" />
+
+        <label>Date de naissance:</label>
+        <input type="date" formControlName="birthday" />
+        <div class="error" *ngIf="contactForm.controls['birthday'].invalid && contactForm.controls['birthday'].touched">
+            {{ getErrorMessage(contactForm.controls['birthday'], 'Date de naissance') }}
+        </div>
+
+        <button type="submit" [disabled]="contactForm.invalid">Mettre à jour</button>
+    </form>
+</div>
